@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "LinkSquad",
+    "version": "1.0.0",
+    "description": "A browser extension to retrieve specific LinkedIn posts based on content type and display links to them.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "tabs",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://www.linkedin.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "logo.jpg",
+        "48": "logo.jpg",
+        "128": "logo.jpg"
+      }
+    },
+    "icons": {
+      "16": "logo.jpg",
+      "48": "logo.jpg",
+      "128": "logo.jpg"
+    },
+    "content_scripts": [
+  {
+    "matches": ["https://www.linkedin.com/*"],
+    "js": ["content.js"]
+  }
+]
+
+  }
+  
